@@ -6,7 +6,7 @@ open Fake.AssemblyInfoFile
 open Fake.Git
 open System.IO
 
-let projectName           = "candycane"
+let projectName           = "CandyCane"
 
 //Directories
 let buildDir              = @".\build"
@@ -60,7 +60,7 @@ Target "AssemblyInfo" (fun _ ->
 )
 
 Target "Buildapp" (fun _->
-    !! @"src\app\*.csproj"
+    !! @"src\app\**\*.csproj"
       |> MSBuildRelease appBuildDir "Build"
       |> Log "Build - Output: "
 )
