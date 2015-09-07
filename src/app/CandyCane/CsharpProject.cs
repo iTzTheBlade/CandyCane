@@ -43,6 +43,9 @@ namespace CandyCane
                 Console.WriteLine("Repository cloned");
                 Console.WriteLine("Try to build the project");
 
+                BuildScript buildScript = new BuildScript(Helper.GetRootPath(Helper._projectName), Helper._projectName);
+                buildScript.CreateBuildScript();
+
                 BootAndBuildBat batActions = new BootAndBuildBat(Helper.GetRootPath(Helper._projectName));
                 batActions.RunBootAndBuiltBat();
 
